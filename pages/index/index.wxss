@@ -1,0 +1,30 @@
+
+.bg-index1 {
+  background-color: #F33F5A;
+  color: #fff;
+}
+
+.bg-index2 {
+  background-color: #954FF6;
+  color: #fff;
+}
+
+.bg-index3 {
+  background-color: #5177EE;
+  color: #fff;
+}
+
+.bg-index4 {
+  background-color: #FFC32E;
+  color: #fff;
+}
+.radius-index{
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.my-icon image {
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+  margin: 0 auto
+}

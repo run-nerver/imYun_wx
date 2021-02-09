@@ -1,0 +1,6 @@
+function wxs_dataTime(str, a, b) {
+	return str.substring(a, b)
+}
+module.exports = {
+  wxs_dataTime: wxs_dataTime
+}

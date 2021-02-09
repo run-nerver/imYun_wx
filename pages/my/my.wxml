@@ -1,0 +1,70 @@
+<view class="UCenter-bg">
+    <view class="cu-avatar round lg" wx:if="{{hasUserInfo && canIUse}}" style="background-image:url({{userInfo.avatarUrl}});">
+        <view class="cu-tag badge {{userInfo.gender %2 ==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+    </view>
+    <view class="margin-top-sm text-xl">
+        <text>{{userInfo.nickName}}</text>
+        <view class='text-lg flex justify-between padding-left-sm padding-top-xs text-white text-shadow-a'>
+            <button wx:if="{{!hasUserInfo && canIUse }}" class="cu-btn bg-red margin-tb-sm lg" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                立即登入
+            </button>
+            <view class="text-sm"></view>
+        </view>
+    </view>
+    <image src="https://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/my/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+</view>
+<view class="margin" style="background-image:url(https://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/my/wavebg.png);">
+    <view class="cu-list grid col-3 no-border my-iconcolor shadow-lg my-radius cu-list-no">
+        <view class="cu-item my-icon" bindtap="goFileHistory">
+            <navigator url="" delta="1" hover-class="none">
+                <image src='/images/my/history.png' class='png' mode='aspectFit'></image>
+                <text class="text-xl text-my text-bold">打印历史</text>
+            </navigator>
+        </view>
+        <view class="cu-item my-icon" bindtap="goAbout">
+            <navigator url="" delta="1" hover-class="none">
+                <image src='/images/my/about.png' class='png' mode='aspectFit'></image>
+                <text class="text-xl text-my text-bold">关于我们</text>
+            </navigator>
+        </view>
+        <view class="cu-item my-icon">
+            <navigator url="" delta="1" hover-class="none">
+                <image src='/images/my/fankui.png' class='png' mode='aspectFit'></image>
+                <button class="cu-btn bg-white sm" open-type="feedback">
+                    <text class="text-xl text-my">问题反馈</text>
+                </button>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="margin flex">
+    <view class='bg-white flex-sub margin-right my-radius shadow-lg'>
+        <view class="cu-list grid col-1 no-border my-iconcolor my-radius cu-list-no">
+            <view class="cu-item my-icon">
+                <navigator url="" delta="1" hover-class="none">
+                    <image src='/images/my/fankui.png' class='png' mode='aspectFit'></image>
+                    <view class="padding flex flex-wrap justify-between align-center bg-white">
+                        <button class="cu-btn bg-white sm" open-type="contact">
+                            <text class="text-xl text-my">客服</text>
+                        </button>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class='bg-white flex-sub my-radius shadow-lg'>
+        <view class="cu-list grid col-1 no-border my-iconcolor my-radius cu-list-no">
+            <view class="cu-item my-icon">
+                <navigator url="" delta="1" hover-class="none">
+                    <image src='/images/my/fenxiang.png' class='png' mode='aspectFit'></image>
+                    <view class="padding flex flex-wrap justify-between align-center bg-white">
+                        <button class="cu-btn bg-white sm" open-type="share">
+                            <text class="text-xl text-my">分享好友</text>
+                        </button>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='cu-tabbar-height'></view>

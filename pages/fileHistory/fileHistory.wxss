@@ -1,0 +1,22 @@
+
+.margin-bg {
+  margin-top: 50%;
+}
+.cu-timeline .cu-time {
+  width: 100%;
+  text-align: left;
+  padding: 20rpx 0 20rpx 37rpx;
+  font-size: 26rpx;
+  display: block;
+}
+.cu-timeline>.cu-item>.content:not([class*="bg-"]) {
+  color: #666;
+}
+.margin-tag{
+  margin-top: 10rpx;
+}
+
+.cu-timeline {
+  display: block;
+  background: #F5F5F5;
+}

@@ -1,0 +1,81 @@
+<cu-custom isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">打印选择</view>
+</cu-custom>
+<view class="cu-bar bg-white">
+	<view class="action">
+		<text class="cuIcon-titles text-green"></text>
+		<view class="text-cut text-bold radius" style="width:230px">{{fileName}}</view>
+	</view>
+	<view class="action" catchtap="preview">
+		<text class="cuIcon-attention text-grey"></text>预览
+	</view>
+</view>
+
+<radio-group class="block" value="{{ color }}" bind:change="isColor">
+	<view class="cu-form-group cu-form-solid">
+		<view class="title text-black text-bold">打印颜色</view>
+		<view class="flex align-center">
+			<radio class="black radio" value="0" checked></radio><text
+				class="text-black text-bold solid-right text-xl margin-right">黑白</text>
+			<radio class="black radio" value="1"></radio><text class="text-black text-bold text-xl">彩色</text>
+		</view>
+	</view>
+</radio-group>
+<radio-group class="block" value="{{ direction }}" bind:change="isDirection">
+	<view class="cu-form-group cu-form-solid">
+		<view class="title text-black text-bold">打印方向</view>
+		<view class="flex align-center">
+			<radio class="black radio" value="1" checked></radio><text
+				class="text-black text-bold solid-right text-xl margin-right">纵向</text>
+			<radio class="black radio" value="0"></radio><text class="text-black text-bold text-xl">横向</text>
+		</view>
+	</view>
+</radio-group>
+<radio-group class="block" value="{{ singleSide }}" bind:change="isSingleSide">
+	<view class="cu-form-group cu-form-solid">
+		<text class="title text-black text-bold">打印方式</text>
+		<view class="flex align-center">
+			<radio class="black radio" value="0" checked></radio><text
+				class="text-black text-bold solid-right text-xl margin-right">单面</text>
+			<radio class="black radio" value="1"></radio><text class="text-black text-bold text-xl">双面</text>
+		</view>
+	</view>
+</radio-group>
+<radio-group class="block" value="{{ paperFormat }}" bind:change="isPaperFormat">
+	<view class="cu-form-group cu-form-solid">
+		<view class="title text-black text-bold">打印纸张</view>
+		<view class="flex align-center">
+			<radio class="black radio" value="A4" checked></radio><text
+				class="text-black text-bold solid-right text-xl margin-right"> A 4 </text>
+			<radio class="black radio" value="A3"></radio><text class="text-black text-bold text-xl margin-right"> A 3</text>
+		</view>
+	</view>
+</radio-group>
+<view class="cu-form-group ">
+	<textarea maxlength="-1" bindinput="textareaAInput" value="{{ remarks }}" placeholder="请输入打印备注"></textarea>
+</view>
+<view class="cu-bar btn-group margin-top">
+	<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="upload" data-target="uploadimg">确认打印</button>
+</view>
+
+<view class="cu-modal {{modalName =='uploadimg'?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">上传进度</view>
+			<view class="action" bindtap="goHome">
+				<text class="cuIcon-close text-break"></text>
+			</view>
+		</view>
+		<view class="padding-xl">
+			<view class="cu-progress round striped active">
+				<view class="bg-green" style="width: {{ processNum }}%;"></view>
+			</view>
+			<view class="cu-bar btn-group">
+				<view class="cu-bar btn-group">
+					<button class="cu-btn bg-green shadow-blur round" bindtap="goHome">返回</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

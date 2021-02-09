@@ -1,0 +1,29 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+  <view slot="backText">返回</view>
+  <view slot="content">关于我们</view>
+</cu-custom>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg '>
+  <view class='text-center margin-bottom text-lg text-black text-bold'>关于墨韵打印</view>
+  <view class='text-content'>
+    <view>Hi！开发者~欢迎使用墨韵打印！</view>
+    <view class='margin-top-sm'>XXXXXXXXXXXXXXXXXXXXXXXXX
+      XXXXXXXXXXX
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXX。</view>
+    <view class='margin-top-sm'>xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</view>
+    <view class='margin-top-sm'>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx٩(๑❛ᴗ❛๑)۶</view>
+    <view class='margin-top-sm'>xxxxxxxxxxxxxx</view>
+    <view class="action" >
+      <image src="http://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/my/undraw.png" class="png" mode="aspectFit"></image>
+      <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="phone">
+      电话联系
+      </button>
+      <button class="cu-btn block bg-green margin-tb-sm lg" open-type="contact">
+        微信联系
+      </button>
+    </view>
+  </view>
+</view>
+

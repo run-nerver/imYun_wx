@@ -1,0 +1,39 @@
+<wxs src="../../wxs/dateTime.wxs" module="wxs"></wxs>
+<cu-custom isBack="{{true}}" bgColor="bg-gray">
+  <view slot="backText">返回</view>
+  <view slot="content">打印历史</view>
+</cu-custom>
+<view wx:if="{{!file}}" class="margin-bg">
+  <view class="bg-img padding-tb-xl" style="background-image: url('https://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/my/nohistory.png');height: 414rpx;" />
+</view>
+
+<block wx:if="{{file}}" wx:for="{{ file }}" wx:key="index">
+  <view class="cu-timeline">
+    <view class="cu-time">{{ wxs.wxs_dataTime(item.creatTime, 5, 10) }}</view>
+    <view class="cu-item">
+      <view class="content bg-white shadow-lg">
+        <view class="cu-capsule radius">
+        <!-- <view class="cu-tag bg-cyan">{{ item.id }}</view> -->
+        时间:
+          <view class="cu-tag line-cyan">{{ wxs.wxs_dataTime(item.creatTime, 12, 16) }}</view>
+        </view>
+        <view class="cu-capsule radius">
+          提取码:
+          <view class="cu-tag line-cyan">{{ item.code }}</view>
+        </view>
+        <view class="margin-top">
+          <view class="action sub-title text-cut"  style="width:550 rpx">
+            <text class="text-xl text-bold">{{ item.fileName }}</text>
+          </view>
+          <view class="cu-tag ">{{ item.direction ==0?'横向':'纵向'}}</view>
+          <view class="cu-tag ">{{ item.fileColor == 0?'黑白':'彩色'}}</view>
+          <view class="cu-tag ">{{item.paperFormat == 'A4'?'A 4': 'A 3'}}</view>
+          <view class="cu-tag ">{{item.singleSide == 0?'单面':'双面'}}</view>
+        </view>
+          <view class="bg-gray padding-sm radius margin-tag" wx:if="{{ item.remarks.length > 0 }}">
+            {{item.remarks}}
+          </view>
+      </view>
+    </view>
+  </view>
+</block>

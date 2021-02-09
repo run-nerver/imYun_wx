@@ -1,0 +1,124 @@
+<image src='https://file.xishng.top/MiniProgram/index/headNg.png' mode='widthFix' class='tn-bg'></image>
+
+<cu-custom bgColor="#5E9AFD"></cu-custom>
+<view>
+  <swiper class="padding radius-index screen-swiper {{DotStyle?'round-dot':'square-dot'}}" indicator-dots="true"
+    circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item class="radius-index {{cardCur==index?'cur':''}}" bindtap="goAbout">
+      <image class=''
+        src="http://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/index/about.png"
+        mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- <button catchtap="test">web-view</button> -->
+<view class="bg-white margin radius-index">
+  <view class="cu-bar">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">文档打印</text>
+      <text class="text-ABC text-blue">File</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class="flex  my-radius shadow-lg">
+    <view class='flex-sub'>
+        <view class="cu-list grid col-1 no-border my-iconcolor my-radius cu-list-no">
+            <view class="cu-item my-icon" catchtap="getWxFile">
+                <navigator url="" delta="1" hover-class="none">
+                    <image src='/images/wxDoc.png' class='png' mode='aspectFit'></image>
+                    <text class="text-xl text-my">微信文件</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class='flex-sub'>
+        <view class="cu-list grid col-1 no-border my-iconcolor my-radius cu-list-no">
+            <view class="cu-item my-icon" bindtap="showModal" data-target="develop">
+                <navigator url="" delta="1" hover-class="none">
+                    <image src='/images/phoneFile.png' class='png' mode='aspectFit'></image>
+                    <text class="text-xl text-my">手机文件</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="bg-white margin radius-index">
+  <view class="cu-bar">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">图片打印</text>
+      <text class="text-ABC text-blue">Image</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class="flex  my-radius shadow-lg">
+    <view class='flex-sub'>
+        <view class="cu-list grid col-1 no-border my-iconcolor my-radius cu-list-no">
+            <view class="cu-item my-icon" catchtap="getWxPicture">
+                <navigator url="" delta="1" hover-class="none">
+                    <image src='/images/wxDoc.png' class='png' mode='aspectFit'></image>
+                    <text class="text-xl text-my">微信图片</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class='flex-sub'>
+        <view class="cu-list grid col-1 no-border my-iconcolor my-radius cu-list-no">
+            <view class="cu-item my-icon" catchtap="getLocalPicture">
+                <navigator url="" delta="1" hover-class="none">
+                    <image src='/images/phoneImg.png' class='png' mode='aspectFit'></image>
+                    <text class="text-xl text-my">相册图片</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='imagesSelent'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">照片文档打印选择</view>
+      <view class="action text-blue" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      <button class="cu-btn bg-red margin-tb-sm lg" catchtap="getWxPicture">
+        选择选择聊天照片打印
+      </button>
+      <button class="ccu-btn bg-red margin-tb-sm lg" catchtap="getLocalPicture">
+        选择本地相册图片打印
+      </button>
+    </view>
+  </view>
+</view>
+<!-- 弹窗  正在开发中 -->
+<view class="cu-modal {{modalName=='develop'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">工程师正在开发中...</view>
+      <view class="action text-blue" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="bg-img" style="background-image: url('https://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/index/developer.png');height:200px;"></view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view>
+  </view>
+</view>
+<!-- 弹窗 请求登入 -->
+<view class="cu-modal {{modalName=='login'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">您还没有登入...</view>
+      <view class="action text-blue" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="bg-img" style="background-image: url('https://al-yun-oss.oss-cn-hangzhou.aliyuncs.com/MiniProgram/index/login.png');height:200px;"></view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="toMy">立即登入</view>
+    </view>
+  </view>
+</view>

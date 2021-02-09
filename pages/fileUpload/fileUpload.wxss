@@ -1,0 +1,15 @@
+
+.cu-form-solid {
+	border-top: 1rpx solid #eee;
+}
+.cu-progress {
+  overflow: hidden;
+  height: 55rpx;
+  background-color: #ebeef5;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.margin-top{
+	margin-top: 70px
+}
